@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>尋光屋 - 線上塔羅牌解讀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hero 區塊：包含背景圖片、標題與靈魂解讀操作說明（覆蓋式呈現） -->
+  <section class="hero">
+    <!-- 背景圖片由 CSS 設定，可替換成您的藝術圖片 -->
+    <div class="hero-overlay">
+      <h2 class="soul-title">這是一場你與靈魂相遇的對話</h2>
+      <p class="soul-text first-line">學會在理性與感性之間找到平衡，讓內心與現實並肩前行</p>
+      <p class="soul-text second-line">別害怕偶爾的失控，那或許是靈魂在提醒你——你依然炙熱地活著。勇敢追逐吧，因為那道光，本就屬於你。</p>
+    </div>
+  </section>
+
+  <!-- 靈魂解讀按鈕 -->
+  <div class="btn-container initial">
+    <button id="soulReadingBtn" class="styled-btn">靈魂解讀</button>
+  </div>
+
+  <!-- Sticky 區塊：靈魂解讀結果 -->
+  <div id="soulSection" class="sticky-section hidden">
+    <h2>靈魂解讀</h2>
+    <div id="soulCards" class="cards"></div>
+  </div>
+
+  <!-- 下方滾動內容 -->
+  <div class="scroll-content">
+    <!-- 問題解讀操作說明區（藝術化呈現） -->
+    <div id="postSoulInstructions" class="instructions question-instructions hidden">
+      <p class="static-text">人只要活著就時時刻刻在做取捨。做取捨那是因為你還有選擇的機會。所以只要你遵從自己的內心，怎麼選都沒錯。</p>
+      <p class="static-text">別人還沒限制你。別先把自己給限制住了</p>
+    </div>
+
+    <!-- 問題解讀按鈕區 -->
+    <div class="btn-container hidden" id="questionBtnContainer">
+      <button id="questionReadingBtn" class="styled-btn">問題解讀</button>
+    </div>
+
+    <!-- 領域按鈕區 -->
+    <div id="questionOptions" class="hidden">
+      <div class="btn-row">
+        <button class="questionBtn red-btn" data-type="感情">感情</button>
+        <button class="questionBtn red-btn" data-type="人際關係">人際關係</button>
+      </div>
+      <div class="btn-row">
+        <button class="questionBtn yellow-btn" data-type="學業">學業</button>
+        <button class="questionBtn yellow-btn" data-type="事業">事業</button>
+        <button class="questionBtn yellow-btn" data-type="財運">財運</button>
+      </div>
+    </div>
+
+    <!-- 各領域抽牌結果 -->
+    <div id="questionCards"></div>
+
+    <!-- 2025 祝福牌區 -->
+    <div class="blessing-container hidden" id="blessingContainer">
+      <button id="blessing2025Btn" class="styled-btn">2025的祝福牌</button>
+      <div id="blessingCard" class="blessing-card hidden">
+        <div class="couplets">
+          <div class="left-couplet">解惑塔羅療心靈</div>
+          <div id="blessingCardDisplay" class="card"></div>
+          <div class="right-couplet">命運驚喜藏心裡</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
