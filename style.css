@@ -13,19 +13,21 @@ body {
 }
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-/* Header 區塊：店名與 Slogan */
+/* Header 區塊（品牌） */
 header.header {
-  padding: 10px;
-  text-align: center;
   position: relative;
   z-index: 100;
+  padding: 10px;
+  text-align: center;
 }
 .brand {
-  display: inline-block;
-  background: rgba(255,255,255,0.6);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255,255,255,0.7);
   padding: 5px 10px;
   border-radius: 5px;
 }
@@ -62,12 +64,15 @@ header.header {
   padding: 0 20px;
 }
 
-/* 靈魂解讀操作說明 */
+/* 靈魂解讀操作說明（主視覺） */
+.conversation {
+  text-align: center;
+  max-width: 90%;
+}
 .soul-title {
   font-size: 20px;
   color: #b85c38;
   margin-bottom: 10px;
-  text-align: center;
   opacity: 0;
   animation: fadeIn 2s forwards;
 }
@@ -77,6 +82,7 @@ header.header {
   margin-bottom: 10px;
   opacity: 0;
 }
+/* 依序淡入：先標題、再第一行、再第二行 */
 .first-line {
   animation: fadeIn 2s forwards;
   animation-delay: 2s;
@@ -86,7 +92,7 @@ header.header {
   animation-delay: 4s;
 }
 
-/* 問題解讀操作說明（靜態呈現，帶藝術感） */
+/* 問題解讀操作說明（藝術風格） */
 .question-instructions {
   max-width: 600px;
   margin: 40px auto;
@@ -244,7 +250,7 @@ button:hover {
   padding: 20px;
 }
 
-/* 領域卡牌排列 */
+/* 領域卡牌排列：每次新增一 row */
 .cards-row {
   display: flex;
   gap: 10px;
@@ -315,8 +321,8 @@ button:hover {
     padding: 15px;
     font-size: 14px;
   }
-  header.header h1 {
-    font-size: 28px;
+  .hero {
+    height: 40vh;
   }
   .store-name {
     font-size: 20px;
