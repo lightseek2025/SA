@@ -138,8 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!questionCategories[domain]) {
         const section = document.createElement("div");
         section.innerHTML = `<h3>${domain}</h3><hr>`;
+        // 將領域的牌區容器使用新的 class（垂直排列）
         const container = document.createElement("div");
-        container.classList.add("cards");
+        container.classList.add("domain-cards-container");
         section.appendChild(container);
         questionCards.appendChild(section);
         questionCategories[domain] = { container, deck: domainDecks[domain] };
