@@ -180,12 +180,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- Splash 畫面處理 ---
-  // 當 splash 動畫結束後，顯示 mainContent 並移除 splash
   setTimeout(() => {
-    document.getElementById("splash").style.display = "none";
-    document.getElementById("mainContent").classList.remove("hidden");
-    document.getElementById("mainContent").style.display = "block";
-  }, 4000); // 假設總共4秒
+    document.getElementById("splash").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("splash").style.display = "none";
+      document.getElementById("mainContent").classList.remove("hidden");
+      document.getElementById("mainContent").style.display = "block";
+    }, 1500);
+  }, 2500);
 
   // --- 觀察問題解讀操作說明區並觸發淡入動畫 ---
   const observerOptions = {
