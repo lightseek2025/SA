@@ -36,18 +36,28 @@ a {
   border-radius: 5px;
 }
 .splash-store {
-  font-size: 36px;
+  font-size: 28px; /* 調小字型 */
   color: #fff;
   margin-bottom: 10px;
+  /* 淡入再淡出動畫，整體4秒 */
+  animation: fadeInOut 4s ease;
 }
 .splash-slogan {
   font-size: 18px;
   color: #eee;
 }
 
-/* 畫面淡出動畫（splash） */
+/* splash 淡出動畫 */
 @keyframes splashFadeOut {
   to { opacity: 0; visibility: hidden; }
+}
+
+/* 尋光屋淡入淡出動畫 */
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* Main Content 初始隱藏 */
@@ -57,8 +67,6 @@ a {
 #mainContent {
   display: none;
 }
-
-/* 一旦 splash 消失後，用 JavaScript 將 #mainContent 顯示 */
 
 /* Hero 區塊 */
 .hero {
@@ -92,6 +100,7 @@ a {
   margin-bottom: 10px;
   opacity: 0;
   animation: fadeIn 2s forwards;
+  text-align: center; /* 靈魂解讀標題置中 */
 }
 .soul-text {
   font-size: 16px;
@@ -133,6 +142,7 @@ a {
 /* 按鈕區 */
 .btn-container {
   margin: 20px;
+  text-align: center; /* 按鈕置中 */
 }
 button {
   padding: 10px 15px;
@@ -190,6 +200,7 @@ button:hover {
 .sticky-section h2 {
   color: #b85c38;
   margin-bottom: 10px;
+  text-align: center; /* 靈魂解讀標題置中 */
 }
 
 /* 卡片樣式 */
@@ -273,11 +284,13 @@ button:hover {
   gap: 10px;
   justify-content: center;
   animation: magicReveal 1s ease-out;
+  margin-bottom: 15px; /* 每排間隔 */
 }
 
 /* 領域區塊標題與分隔線 */
 #questionCards h3 {
   margin: 20px 0 5px;
+  text-align: center; /* 領域標題置中 */
 }
 #questionCards hr {
   margin: 0 0 10px;
@@ -288,6 +301,7 @@ button:hover {
   margin: 20px auto;
   max-width: 600px;
   animation: magicReveal 1s ease-out;
+  text-align: center; /* 祝福區塊置中 */
 }
 .blessing-card {
   margin-top: 15px;
