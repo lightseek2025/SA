@@ -39,8 +39,8 @@ a {
   font-size: 28px; /* 調小字型 */
   color: #fff;
   margin-bottom: 10px;
-  /* 淡入再淡出動畫，整體4秒 */
-  animation: fadeInOut 4s ease;
+  /* 淡入再淡出動畫，總共 4.5 秒 */
+  animation: fadeInOut 4.5s ease;
 }
 .splash-slogan {
   font-size: 18px;
@@ -88,8 +88,9 @@ a {
   align-items: center;
   padding: 0 20px;
 }
+/* 調整 Hero 內部文字排列為靠左 */
 .conversation {
-  text-align: center;
+  text-align: left;
   max-width: 90%;
 }
 
@@ -279,12 +280,19 @@ button:hover {
 }
 
 /* 領域卡牌排列 */
+/* 為各領域的牌容器建立新 class，改為垂直排列 */
+.domain-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 每個 row 內的卡牌排列 */
 .cards-row {
   display: flex;
   gap: 10px;
   justify-content: center;
   animation: magicReveal 1s ease-out;
-  margin-bottom: 15px; /* 每排間隔 */
 }
 
 /* 領域區塊標題與分隔線 */
