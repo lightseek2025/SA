@@ -8,7 +8,6 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #fef8e6, #ffe4b5);
   color: #5c5c5c;
-  text-align: center;
   overflow-x: hidden;
 }
 a {
@@ -16,34 +15,52 @@ a {
   text-decoration: none;
 }
 
-/* Header 區塊（品牌） */
-header.header {
-  position: relative;
-  z-index: 100;
-  padding: 10px;
-  text-align: center;
+/* Splash 畫面 */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  animation: splashFadeOut 1.5s ease-out 2.5s forwards; /* 2.5秒後開始淡出 */
 }
-.brand {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(255,255,255,0.7);
-  padding: 5px 10px;
+.splash-content {
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
   border-radius: 5px;
 }
-.store-name {
-  font-size: 24px;
-  font-weight: 400;
-  margin: 0;
-  color: #b85c38;
+.splash-store {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 10px;
 }
-.store-slogan {
-  font-size: 14px;
-  margin: 0;
-  color: #6a994e;
+.splash-slogan {
+  font-size: 18px;
+  color: #eee;
 }
 
-/* Hero 區塊：背景圖片與遮罩 */
+/* 畫面淡出動畫（splash） */
+@keyframes splashFadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Main Content 初始隱藏 */
+.hidden {
+  display: none;
+}
+#mainContent {
+  display: none;
+}
+
+/* 一旦 splash 消失後，用 JavaScript 將 #mainContent 顯示 */
+
+/* Hero 區塊 */
 .hero {
   position: relative;
   width: 100%;
@@ -63,12 +80,12 @@ header.header {
   align-items: center;
   padding: 0 20px;
 }
-
-/* 靈魂解讀操作說明（主視覺） */
 .conversation {
   text-align: center;
   max-width: 90%;
 }
+
+/* 靈魂解讀操作說明 */
 .soul-title {
   font-size: 20px;
   color: #b85c38;
@@ -82,7 +99,7 @@ header.header {
   margin-bottom: 10px;
   opacity: 0;
 }
-/* 依序淡入：先標題、再第一行、再第二行 */
+/* 依序淡入 */
 .first-line {
   animation: fadeIn 2s forwards;
   animation-delay: 2s;
@@ -92,7 +109,7 @@ header.header {
   animation-delay: 4s;
 }
 
-/* 問題解讀操作說明（藝術風格） */
+/* 問題解讀操作說明 */
 .question-instructions {
   max-width: 600px;
   margin: 40px auto;
@@ -250,7 +267,7 @@ button:hover {
   padding: 20px;
 }
 
-/* 領域卡牌排列：每次新增一 row */
+/* 領域卡牌排列 */
 .cards-row {
   display: flex;
   gap: 10px;
@@ -304,12 +321,7 @@ button:hover {
   margin-left: 30px;
 }
 
-/* 隱藏 */
-.hidden {
-  display: none;
-}
-
-/* Keyframes for 淡入 */
+/* Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -317,12 +329,12 @@ button:hover {
 
 /* Media Query：針對手機版調整 */
 @media (max-width: 768px) {
-  section.instructions {
-    padding: 15px;
-    font-size: 14px;
-  }
   .hero {
     height: 40vh;
+  }
+  .brand {
+    top: 5px;
+    left: 5px;
   }
   .store-name {
     font-size: 20px;
