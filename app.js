@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function initDecks() {
     const remaining = fullDeck().filter(card => !soulUsed.includes(card));
     console.log("初始化牌庫，剩餘牌：", remaining);
-    ["感情", "人際關係", "學業", "事業", "財運"].forEach(domain => {
+    // 將 "健康" 也加入領域中
+    ["健康", "感情", "人際關係", "學業", "事業", "財運"].forEach(domain => {
       domainDecks[domain] = [...remaining];
       console.log(`領域 ${domain} 牌庫初始化完成，牌數：${domainDecks[domain].length}`);
     });
